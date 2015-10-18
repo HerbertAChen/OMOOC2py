@@ -18,6 +18,6 @@
 	+ [cards]
 - [语言]
 	+ [练习：0wex0.5-PomoHistoryReader](_src/om2py0w/0wex0dot5/README.md)
-	+ [练习：0wex1---EasyNote](_src/om2py0w/0wex0dot5/README.md)
+	+ [练习：0wex1---EasyNote](_src/om2py0w/0wex1/README.md)
 - [项目]
  
