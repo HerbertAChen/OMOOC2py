@@ -84,11 +84,11 @@ Git 的特点：
 
 ## Someday/Maybe
 
-undoing things
-working with remotes
-tagging
-git aliases
-git branching
+* undoing things
+* working with remote
+* stagging
+* git aliases
+* git branching
 
 ## 进展
 
