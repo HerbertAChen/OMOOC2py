@@ -9,7 +9,7 @@
 	+ [0wd4公开课有感](0MOOC/0wd4-notes.md)
 - [工具]
 	+ [CLI]
-	+ [Git]
+	+ [Git](0MOOC/git.md)
 	+ [Github]
 	+ [Gitbook]
 	+ [python]
