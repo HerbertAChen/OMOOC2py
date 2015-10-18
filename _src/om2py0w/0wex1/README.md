@@ -1,3 +1,28 @@
+## 0wex1 EasyNote 说明书
+
+### 主要功能
+
+记录单行日记
+
+列出过往日记
+
+### 程序介绍
+
+输入的日记文本将存储在程序所在目录下的 log.txt 文件中，若无此文件请先手动创建。
+
+运行程序后，用户有如下4个选项：
+
+* A: add note
+* L: list notes
+* H: help
+* E: exit
+
+保存日记时，程序会自动在文本之前添加当前日期和时间，如：
+> [2015-10-18 22:41:07] This is a note.
+
+### 程序代码
+
+```
 # -*- coding: utf-8 -*-
 # 0wex1 EasyNote
 from datetime import datetime
@@ -44,3 +69,8 @@ def ListNotes():
 
 if __name__=='__main__':
  	 main()      
+```
+
+### 进展
+
+151018 创建文档
