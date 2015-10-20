@@ -13,10 +13,10 @@
 	+ [Github]
 	+ [Gitbook]
 	+ [python]
-	+ [SublimeText]
+	+ [SublimeText](0MOOC/SublimeText.md)
 	+ [Markdown]
 	+ [cards]
-- [语言]
+- [试炼]
 	+ [0wex0.5-PomoHistoryReader](_src/om2py0w/0wex0dot5/README.md)
 	+ [0wex1---EasyNote](_src/om2py0w/0wex1/README.md)
 - [项目]
