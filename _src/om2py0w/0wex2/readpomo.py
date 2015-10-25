@@ -4,7 +4,10 @@
 
 import unicodecsv as csv
 
-with open('Pomotodo_History_test.csv','rb') as pomocsv:
+filename = 'Pomotodo_History_test.csv'
+# 待改进：文件名的指定
+
+with open(filename,'rb') as pomocsv:
 	pomoreader = csv.reader(pomocsv, delimiter=',', )
 	pomodes = [] #番茄description列表
 	data = [] # data = [..., [taska,[subta-1,subta-2,...],[counta-1,counta-2,...]], ... ]
