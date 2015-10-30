@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # 0wex1 EasyNote
 from datetime import datetime
+from os.path import exists
 
 filename = "mynotes.txt"
 
@@ -29,7 +30,10 @@ Type "help" for more infomation.'''
 		if cmd in ['help', 'h', '?']:
 			print helpmsg
 		elif cmd in ['new', 'n']:
-			NewNote()
+			note  = raw_input('New note:\n>>> ').strip()
+			if note != '':
+				NewNote(note)
+				print 'Note added!'
 		elif cmd == 'list':
 			ListNotes('all')
 		elif length >= 2:
@@ -44,72 +48,60 @@ Type "help" for more infomation.'''
 			print 'Invalid command!\n'
 		cmd = raw_input('$ ').lower().strip()
 		
-def NewNote():
+def NewNote(note):
 	f = open(filename,'a')
-	note  = raw_input('New note:\n>>> ').strip()
-	if input != '':
-		time = str(datetime.now())[0:19] # 去掉秒数的小数部分
-		f.write('%s   %s\n' % (time, note))
-		f.close()
-		print 'Note added!'
+	time = str(datetime.now())[0:19] # 去掉秒数的小数部分
+	f.write('%s   %s\n' % (time, note))
+	f.close()
 
 def ListNotes(filter):
-	result = SelectNotes(filter)
-	if result != -1:
-		selected, indexes = result[0], result[1]
-		if len(selected) == 0:
-			print 'Nothing selected!中文' # 不加u会显示乱码, 为什么!
+	result = GetNotes(filter)
+	if result == '':
+		print 'File not created!'
+	elif result != -1:
+		notes, indexes = result['notes'], result['indexes']
+		if len(notes) == 0:
+			print 'Nothing selected!'
 		else:
 			print '\n%s   %s   %s' % (
 				' No', ' '*9+'CreateTime', 'Content')
 			print '%s   %s   %s' % (' --', ' '*9+'-'*10, '-'*7) 
-			for i in range(len(selected)):
-				print '% 3d   %s' % (indexes[i], selected[i]),
-			print '\n     %d notes listed.\n' % len(selected)
+			for i in range(len(notes)):
+				print '% 3d   %s' % (indexes[i], notes[i]),
+			print '\n     %d notes listed.\n' % len(notes)
 		
 #def DelNotes(db, filter):
 
-#def Group():
+def GetNotes(word): #根据筛选条件word，返回符合条件的笔记内容及编号
+	# 两种意外情况：1、错误输入，2、未找到符合条件的note
+	if exists(filename):
+		f = open(filename,'r')
+		allnotes = f.readlines()
+		f.close()
 
-def SelectNotes(filter): #输入filter，返回符合条件的笔记编号和内容
-	# 如何区分两种意外情况：1、错误输入，2、未找到符合条件的note
-	f = open(filename,'r')
-	notes = f.readlines()
-	f.close()
-	selected, indexes = [], []
-	if filter == 'all':
-		selected = notes
-		indexes = range(len(notes))
-		return [selected, indexes]
-#	elif filter.split(',') 都是 digit:
-#		if 0 < num < len(notes):
-#			for id in filter_nums：
-#				selected[id] = db[id]
-#			return [selected, indexes]
-#		else:
-#			print 'Note_index out of range.'
-#			return -1
-	elif filter[0:4] == 'tag:':
-		tag = filter[4:]
-		for i in range(len(notes)):
-			note = notes[i]
-			if '#' in note:
-				if note.partition('#')[2][0:-1].lower() == tag: 
-				# 务必注意, 在比较时去掉note末尾的\n
-					selected.append(note)
-					indexes.append(i)
-		return [selected, indexes]
-#	elif (filter[0:4] = 'date:'):
-#		if filter[5:] 为有效的日期格式:
-#			selected = notes within this date range
-#			return [selected, indexes]
-#		else:
-#			print 'Invalid date format!'
-#			return -1
+		filter = word.lower().strip()
+		selected = {'notes':[], 'indexes':[]}
+		if filter == 'all':
+			selected['notes'] = allnotes
+			selected['indexes'] = range(len(allnotes))
+			return selected
+		elif filter[0:4] == 'tag:':
+			tag = filter[4:]
+			for i in range(len(allnotes)):
+				note = allnotes[i]
+				if '#' in note:
+					if note.partition('#')[2][0:-1].lower() == tag: 
+					# 务必注意, 在比较时去掉note末尾的\n
+						selected['notes'].append(note)
+						selected['indexes'].append(i) #调用append方法前, 需要初始化为列表
+			return selected
+	#	elif filter.split(',') 都是 digit:
+	#	elif (filter[0:4] = 'date:'):
+		else:
+			print 'Invalid command!\n'
+			return -1
 	else:
-		print 'Invalid command!\n'
-		return -1
-	
+		return ''
 
 if __name__=='__main__':
  	 main()
