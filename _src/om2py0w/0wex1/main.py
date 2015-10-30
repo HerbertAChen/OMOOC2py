@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 # 0wex1 EasyNote
 from datetime import datetime
-import shelve
 
 filename = "mynotes.txt"
 
