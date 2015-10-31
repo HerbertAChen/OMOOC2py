@@ -12,6 +12,7 @@
 - [试炼]
 	+ [0wex1-EasyNote-CLI版](_src/om2py0w/0wex1/README.md)
     + [0wex2-PomoHistoryReader](_src/om2py0w/0wex2/README.md)
+    + [2wex0-EasyNote-GUI版](_src/om2py2w/2wex0/README.md)
 - [项目]
 
 - [公开课笔记]
