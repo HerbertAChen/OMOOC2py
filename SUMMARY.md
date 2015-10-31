@@ -5,7 +5,7 @@
 - [工具]
 	+ [Git](0MOOC/git.md)
     + [SublimeText](0MOOC/SublimeText.md)
-    + [issue, wiki 及 Gitbook](issue-wiki-gitbook.md)
+    + [issue, wiki 及 Gitbook](0MOOC/issue-wiki-gitbook.md)
 	+ CLI, Github, python, Markdown, cards
 - [语言] 
     + 
