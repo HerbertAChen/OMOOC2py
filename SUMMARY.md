@@ -14,6 +14,7 @@
     + [0wex2-PomoHistoryReader](_src/om2py0w/0wex2/README.md)
 - [项目]
 
-- [周记]
-    + [0w公开课有感](0MOOC/0wd4-notes.md)
-    + [1w公开课有感](0MOOC/1wd4-notes.md)
+- [公开课笔记]
+    + [0w-慎独/不盲从/适度困难](0MOOC/0wd4-notes.md)
+    + [1w-CLI/高桥流](0MOOC/1wd4-notes.md)
+    + [2w-最小代价/详细记录/提问](0MOOC/2wd4-notes.md)
