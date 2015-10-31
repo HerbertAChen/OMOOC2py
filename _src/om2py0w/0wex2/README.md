@@ -1,4 +1,4 @@
-## Ex0.5 PomoHistoryReader
+## 0wEx2 PomoHistoryReader
 
 ### 背景
 平时习惯用 pomotodo.com 记录日常工作及学习的番茄（网页版+安卓端），我很喜欢这个小巧精致的应用，但苦恼的是它对番茄历史数据的整理功能比较弱，不能满足我的需求，比如：
