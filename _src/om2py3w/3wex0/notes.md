@@ -97,7 +97,7 @@ python基础教程-CH14 网络编程
  
 ## 第二部分 编程实现任务
 
-### v0 的实现
+### v0 -- 实现基本功能
 #### 模版代码
 在上面 1.2 节中，我们已经熟悉了实现基本 UDP 通信的模版代码：
 * 服务端
@@ -134,8 +134,13 @@ s.close
 
 其中，服务端写入和读取文件的动作可以直接调用 0wex1 的现有函数，这与 2wex0 的做法相同。
 
+#### V0 界面
+
+![snapshot](snapshot-3wex0.png)
+
 #### V0 代码
 服务端
+
 ```
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -161,7 +166,9 @@ while True:
         print 'Newnote: "%s"\n- from: %s:%s' % (data_recv, addr[0], addr[1])
     s.sendto(data_send, addr)
 ```
+
 客户端
+
 ```
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
