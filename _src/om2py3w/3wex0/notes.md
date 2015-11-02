@@ -7,7 +7,7 @@ C/S如何传输信息，什么是UDP、socket，如何用python实现？
 >首先先明确如何进行网络开发?
 什么是  UDP 协议?
 用 Python 完成一对最简单的 UDP 服务器/客户端?
- 
+
 ### 1.1 关于互联网协议
  
 参考：
@@ -96,6 +96,7 @@ python基础教程-CH14 网络编程
     - 可以很好地与GUI工具包协同工作
  
 ## 第二部分 编程实现任务
+* 环境：Windows 10, Powershell, Active Python 2.7.8.10
 
 ### v0 -- 实现基本功能
 #### 模版代码
@@ -192,5 +193,6 @@ while True:
 s.close
 ```
 
+附：[Github 代码目录](https://github.com/sunoonlee/OMOOC2py/tree/master/_src/om2py3w/3wex0)
 ### 进展
 151102 创建
