@@ -101,6 +101,7 @@ python基础教程-CH14 网络编程
 #### 模版代码
 在上面 1.2 节中，我们已经熟悉了实现基本 UDP 通信的模版代码：
 * 服务端
+
 ```
 import socket
 
@@ -112,7 +113,9 @@ while True:
     data, addr = s.recvfrom(1024)
     s.sendto('msg received', addr)
 ```
+
 * 客户端
+
 ```
 import socket
 
