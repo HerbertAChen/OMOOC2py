@@ -8,8 +8,8 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.bind(('127.0.0.1', 9999))
 print 'Bind UDP on 9999...'
 while True:
-	data_recv, addr = s.recvfrom(1024)
-	if data_recv.lower() == 'list':
+	data_recv, addr = s.recvfrom(10240)
+	if data_recv.lower() in ['list', 'l']:
 		notes = EZ.GetNotes('all') # 从 mynotes.txt 获取 notes
 		if notes == '': # 该返回值表示 文件尚未创建
 			data_send = 'Nothing on server.'
