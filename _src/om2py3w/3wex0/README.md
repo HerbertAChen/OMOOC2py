@@ -3,12 +3,12 @@
 #### 功能及说明
 极简交互式笔记的网络版本
 * 服务端
-    - 运行 [server\udp_server.py](server\udp_server.py)
+    - 运行 [server/udp_server.py](server/udp_server.py)
     - 接收客户端输入的笔记，保存到 mynotes.txt
         - 保存时自动添加当前时间和来源主机名
     - 接收并响应客户端读取笔记请求
 * 客户端
-    - 运行 [client\udp_client.py](client\udp_client.py)
+    - 运行 [client/udp_client.py](client/udp_client.py)
     - 写笔记：输入文字并回车
     - 查看笔记：
         - `list` 列出所有笔记
