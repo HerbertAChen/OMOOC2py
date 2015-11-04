@@ -1,4 +1,4 @@
-### easynote UDP网络版 v1
+### easynote UDP网络版 v1.0
 
 #### 功能及说明
 极简交互式笔记的网络版本
@@ -17,8 +17,11 @@
 
 #### 使用演示
 服务端
+
 ![server](snapshot-3wex0-s.png)
+
 客户端
+
 ![client](snapshot-3wex0-c.png)
 
 #### 技术要点
