@@ -193,6 +193,35 @@ while True:
 s.close
 ```
 
-附：[Github 代码目录](https://github.com/sunoonlee/OMOOC2py/tree/master/_src/om2py3w/3wex0)
+### v1 -- 完善与升级
+#### 想法及实现
+* 如何保存笔记的客户端来源？
+    - 客户端来源用什么信息区分？
+         + IP可能是变化的
+         + 最好是 计算机名
+    - 如何获取计算机名？
+        + google：python get computer name，从[第一个结果](http://stackoverflow.com/questions/799767/getting-name-of-windows-computer-running-python-script)了解到有三种方法：
+            * socket.gethostname() <- 正好是 socket 模块的
+            * platform.node()
+            * os.environ['COMPUTERNAME']
+    - 如何实现
+        + 在客户端发送的笔记内容中增加 hostname
+* 如何按主机名查看笔记
+    - 把主机名传入 GetNotes 函数
+    - 在 GetNotes 函数中，通过对内容进行筛选，得到符合要求的笔记，作为函数返回值
+* V1 代码：详见 [Github 代码目录](https://github.com/sunoonlee/OMOOC2py/tree/master/_src/om2py3w/3wex0)
+
+#### V1 演示截图
+* 服务端
+
+![server](snapshot-3wex0-s.png)
+
+* 客户端
+
+![client](snapshot-3wex0-c.png)
+
 ### 进展
+
 151102 创建
+
+151104 更新到 V1
