@@ -3,7 +3,7 @@
 <body>
 <h2>Easynote-Web版 v0</h2>
 <h3>添加笔记</h3>
-<form action="/eznote" method="post">
+<form action="/note" method="post">
 	> <input name="newnote" type="text" />
 	<input value="Add" type="submit" />
 </form>
