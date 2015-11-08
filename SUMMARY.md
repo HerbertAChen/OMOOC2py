@@ -5,6 +5,7 @@
     + [SublimeText](0MOOC/SublimeText.md)
     + [issue, wiki 及 Gitbook](0MOOC/issue-wiki-gitbook.md)
 - [PY 技能](python/README.md)
+    + [datetime 模块学习](python/datetime.md)
 - [主线任务：Easynote 系列](_src/README.md)
 	+ [1w - CLI 版](_src/om2py0w/0wex1/README.md)
     + [2w - GUI 版](_src/om2py2w/2wex0/README.md)
