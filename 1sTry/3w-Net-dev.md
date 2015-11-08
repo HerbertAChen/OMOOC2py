@@ -1,7 +1,7 @@
 ## Easynote UDP网络版 开发笔记
 * 环境：
     * Windows 10
-    * Powershell
+    * Powershell (in conEmu)
     * Active Python 2.7.8.10
 
 ### v0 -- 实现基本功能
@@ -43,10 +43,6 @@ s.close
     - C: 接收notes -> 输出到屏幕
 
 其中，服务端写入和读取文件的动作可以直接调用 0wex1 的现有函数，这与 2wex0 的做法相同。
-
-#### V0 界面
-
-![snapshot](../_src/om2py3w/3wex0/snapshot-3wex0.png)
 
 #### V0 代码
 服务端
@@ -107,9 +103,9 @@ s.close
          + 最好是 计算机名
     - 如何获取计算机名？
         + google：python get computer name，从[第一个结果](http://stackoverflow.com/questions/799767/getting-name-of-windows-computer-running-python-script)了解到有三种方法：
-            * socket.gethostname() <- 正好是 socket 模块的
-            * platform.node()
-            * os.environ['COMPUTERNAME']
+            * `socket.gethostname()` <- 正好是 socket 模块的
+            * `platform.node()`
+            * `os.environ['COMPUTERNAME']`
     - 如何实现
         + 在客户端发送的笔记内容中增加 hostname
 * 如何按主机名查看笔记
@@ -127,7 +123,6 @@ s.close
 ![client](../_src/om2py3w/3wex0/snapshot-3wex0-c.png)
 
 ### 进展
-
-151102 创建
-151104 更新到 V1
-151108 拆分为 基本知识、开发记录 两部分
+* 151102 创建
+* 151104 更新到 V1
+* 151108 拆分为基本知识与开发记录两部分
