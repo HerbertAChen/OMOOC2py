@@ -46,7 +46,7 @@ s.close
 
 #### V0 界面
 
-![snapshot](snapshot-3wex0.png)
+![snapshot](../_src/om2py3w/3wex0/snapshot-3wex0.png)
 
 #### V0 代码
 服务端
@@ -120,11 +120,11 @@ s.close
 #### V1 演示截图
 * 服务端
 
-![server](snapshot-3wex0-s.png)
+![server](../_src/om2py3w/3wex0/snapshot-3wex0-s.png)
 
 * 客户端
 
-![client](snapshot-3wex0-c.png)
+![client](../_src/om2py3w/3wex0/snapshot-3wex0-c.png)
 
 ### 进展
 
