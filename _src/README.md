@@ -54,6 +54,5 @@
     * QPython 应用原型开发
     * MyDaily 私人记事本移动应用版
 
-### 支线任务--自己折腾
-
+另：自己折腾的支线任务
 * 0wex2-PomohistoryReader
