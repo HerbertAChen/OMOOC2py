@@ -11,9 +11,9 @@
     + [3w - UDP 版](_src/om2py3w/3wex0/README.md)
         * [网络编程基本知识](1sTry/3w-Net-basics.md)
         * [udp 版开发记录](1sTry/3w-Net-dev.md)
-    + [4w - Web 版](_src/om2py3w/4wex0/README.md)
-        * [Web 开发基本知识](1sTry/4w-Web-basics)
-        * [Web 版开发记录](1sTry/4w-Web-dev)
+    + [4w - Web 版](_src/om2py4w/4wex0/README.md)
+        * [Web 开发基本知识](1sTry/4w-Web-basics.md)
+        * [Web 版开发记录](1sTry/4w-Web-dev.md)
     + 5w - 公网版
     + 6w - 公众号版
     + 7w - Android 版
