@@ -1,6 +1,6 @@
-# 迭代开发
-~ 此目录收集, 持续开发时各种体验
+## 迭代开发
 
-## 进展
+想法收集中...
 
-- 150924 大妈创建
+### 参考
+[a little note-taking app with Flask](http://charlesleifer.com/blog/saturday-morning-hack-a-little-note-taking-app-with-flask/)

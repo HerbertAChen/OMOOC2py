@@ -4,6 +4,7 @@
 	+ [Git](0MOOC/git.md)
     + [SublimeText](0MOOC/SublimeText.md)
     + [issue, wiki 及 Gitbook](0MOOC/issue-wiki-gitbook.md)
+- [PY 技能](python/README.md)
 - [主线任务：Easynote 系列](_src/README.md)
 	+ [1w - CLI 版](_src/om2py0w/0wex1/README.md)
     + [2w - GUI 版](_src/om2py2w/2wex0/README.md)
@@ -16,8 +17,7 @@
     + 5w - 公网版
     + 6w - 公众号版
     + 7w - Android 版
-- [PY 技能](python/README.md)
-- 迭代作品
+- [迭代作品](2nDev/README.md)
 - [方法和感悟](thinking/README.md)
     + [0w - 慎独/不盲从/适度困难](thinking/0w-lecture-notes.md)
     + [1w - CLI/高桥流](thinking/1w-lecture-notes.md)
