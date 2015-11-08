@@ -1,5 +1,5 @@
 ### python 私人教程
-* BY and FOR: sunoonlee
+* by: sunoonlee
 * 背景: 2015.10~12 开智 python 二期课程
 * **反转教学**: 持续输出私人教程
 * 以半年前的自己为假想对象, 也希望对同类人有用
@@ -25,16 +25,12 @@
 * 即! 具备基本的独立项目组织能力
 
 #### 自勉
-* 理解 [hacker 精神][hacker], 学习 hacker 技能
 * 跳进英文的海洋, 让 python 本领和英语水平一起进步
 * 更有效地提问, 搜索
 * 慎独, 专注, 善用时间, 发掘大脑潜力
 
-[hacker]:http://translations.readthedocs.org/en/latest/hacker_howto.html
-
 #### About Me
 
 * 坐标成都, 建筑结构设计从业三年
-* 操作系统: Windows
 * Github: [myProfile](https://github.com/sunoonlee), [ThisRepo](https://github.com/sunoonlee/OMOOC2py)
 * Email: helloliming@gmail.com
