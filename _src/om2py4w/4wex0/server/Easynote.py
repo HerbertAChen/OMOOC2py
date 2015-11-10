@@ -1,21 +1,30 @@
 # -*- coding: utf-8 -*-
-# 由 0wex1 EasyNote 修改而来，供 4wex0 调用
-from datetime import datetime
+# SQLite 数据库版
 from os.path import exists
+import sqlite3
+from datetime import datetime
 
-filename = "mynotes.txt"
+dbfilename = "mynotes.db"
 		
 def NewNote(note):
-	f = open(filename,'a')
+	con = sqlite3.connect(dbfilename)
 	time = str(datetime.now())[:19] # 去掉秒数的小数部分
-	f.write('%s  %s\n' % (time, note))
-	f.close()
+	with con:
+		cur = con.cursor()
+		cur.execute("CREATE TABLE IF NOT EXISTS Notes(Id INTEGER PRIMARY KEY, Time TEXT, Content TEXT)")
+		cur.execute("INSERT INTO Notes(Time, Content) VALUES(?,?)", (time, note))
 
-def GetNotes(): # 根据4wex0的需求简化了，仅返回全部笔记的列表
-	if exists(filename):
-		f = open(filename,'r')
-		allnotes = f.readlines()
-		f.close()
+def GetNotes(): # 返回全部笔记的列表
+	if exists(dbfilename):
+		con = sqlite3.connect(dbfilename)
+		allnotes = []
+		with con:
+			con.row_factory = sqlite3.Row
+			cur = con.cursor()
+			cur.execute("SELECT * FROM Notes")
+			rows = cur.fetchall()		
+			for row in rows:
+				allnotes.append('%s  %s' % (row['Time'], row['Content']))
 		return allnotes
 	else:
-		return ['No notes on server']
+		return ['No data on server']

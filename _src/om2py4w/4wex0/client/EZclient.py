@@ -27,7 +27,7 @@ def listnotes():
 	lis = soup.find_all('li')
 	notes = ''
 	for i in lis:
-		notes += i.get_text()
+		notes += i.get_text()+'\n'
 	return notes
 
 if __name__ == '__main__':

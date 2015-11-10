@@ -1,8 +1,9 @@
 ## Easynote Web版 开发笔记
 * 环境：
     * Windows 10
-    * Powershell
+    * Powershell (in conEmu)
     * Active Python 2.7.8.10
+    * 浏览器：Chrome
 
 ### v0 实现基本功能
 #### 实现网页的基本交互
@@ -12,6 +13,7 @@
 ##### 实现新增笔记
 参照 tutorial 中 POST 方法的示例代码，可以方便地实现"新增笔记"这个动作：把新笔记作为表单内容，用 request.forms.get 获取内容，调用已有的 NewNote 函数写入文件。
 ```python
+from bottle import request
 note = request.forms.get('newnote')
 if note:
     Easynote.NewNote(note)
@@ -29,7 +31,7 @@ if note:
 `return template('EZ_template', notes=notes)`
 
 ##### 服务端主要代码
-v0版
+v0
 ```python
 from bottle import get, post, template, request, run
 import Easynote
@@ -59,12 +61,14 @@ run(host='localhost', port=8080, debug=True, reloader=True)
 * 沿用上周的 udp 客户端代码是行不通的，因为服务端并没有定义相应的响应行为
 * 研究了一下公开课介绍的 curl，看帮助文档看的一头雾水。文档里好像只讲了 curl 在命令行中的用法，不知道怎么用在代码中。
 
+
 于是我断定自己还是缺乏 web 开发的基本概念，决定再从基本知识补起。读了一些资料，了解到：
 * HTTP 协议大致是怎么回事
 * 什么是 WSGI 接口
 * web 框架如何在 WSGI 的基础上做了进一步的抽象
 * 大致了解什么是 RESTful 风格
 * 上一篇文《WEB 开发 ：一些基本知识》，除了bottle框架的部分外，主要都是这个过程中所做的笔记。
+
 
 直到读到这篇文章 - [Communicating with RESTful APIs in Python](http://isbullsh.it/2012/06/Rest-api-in-python/)，我才明白如何借助于 RESTful API 调用 HTTP 的数据，而不是在 socket 这种层面上。实际上，具体的实现方式是比较简单的，特别是文中推荐的 requests 库具有非常简洁清晰的逻辑，官方文档也很明白易读。所以之前卡住的原因还是在于对基本概念缺乏理解。
 
@@ -89,7 +93,7 @@ html_doc = r.text
 ##### 从 html 中获取历史笔记信息
 用上边的 `r.text` 获得的是整个 html 文件的内容，需要从中分离出历史笔记内容。
 
-参考《python 基础教程》15.1节，一种思路是用正则表达式去搜索，但这种方式是粗暴而低效的，可读性不好；书中推荐用 Beautiful Soup 库。
+参考《python 基础教程》15.1节，一种思路是用正则表达式去搜索，但这种方式是比较原始粗暴的，不易写, 也不易读；书中推荐用 Beautiful Soup 库。
 
 Beautifil Soup 最新版本为 4.4 版，官方文档有[中文版](http://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/)。完成本任务只需看“快速开始”部分，熟悉几个最基本方法。因为我的 html 模版中，历史笔记每条都对应一个`<li>`标签，所以可以用 `find_all('li')` 获得全部笔记的列表 `lis`。
 ```python
@@ -108,7 +112,7 @@ for i in lis:  notes += i.get_text()
 
 ##### 命令行客户端代码
 v0
-```
+```python
 import requests
 from bs4 import BeautifulSoup
 
@@ -152,6 +156,50 @@ if __name__ == '__main__':
 
 ![client](../_src/om2py4w/4wex0/snapshot-4wex0-cli-v0.png)
 
-### 进展
+### 迭代记录
+#### 数据存储方式改为  SQLite 数据库
+把 Easynote.py 改写为：
+```py
+# -*- coding: utf-8 -*-
+# SQLite 数据库版
+from os.path import exists
+import sqlite3
+from datetime import datetime
 
-151108 创建
+dbfilename = "mynotes.db"
+        
+def NewNote(note):
+    con = sqlite3.connect(dbfilename)
+    time = str(datetime.now())[:19] # 去掉秒数的小数部分
+    with con:
+        cur = con.cursor()
+        cur.execute("CREATE TABLE IF NOT EXISTS Notes(Id INTEGER PRIMARY KEY, Time TEXT, Content TEXT)")
+        cur.execute("INSERT INTO Notes(Time, Content) VALUES(?,?)", (time, note))
+
+def GetNotes(): # 返回全部笔记的列表
+    if exists(dbfilename):
+        con = sqlite3.connect(dbfilename)
+        allnotes = []
+        with con:
+            con.row_factory = sqlite3.Row
+            cur = con.cursor()
+            cur.execute("SELECT * FROM Notes")
+            rows = cur.fetchall()       
+            for row in rows:
+                allnotes.append('%s  %s' % (row['Time'], row['Content']))
+        return allnotes
+    else:
+        return ['No data on server']
+```
+
+输入英文ok，但输入中文时服务器端报错
+```
+ cur.execute("INSERT INTO Notes(Time, Content) VALUES(?,?)", (time, note))
+ProgrammingError: You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.
+```
+
+中文编码问题到现在一直搞不清楚。明天来研究解决吧。
+
+### 进展
+* 151108 创建
+* 151110 改用SQLite
