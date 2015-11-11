@@ -158,7 +158,7 @@ if __name__ == '__main__':
 
 ### 迭代记录
 #### 数据存储方式改为  SQLite 数据库
-把 Easynote.py 改写为：
+把服务端程序调用的 Easynote.py 改写为：
 ```py
 # -*- coding: utf-8 -*-
 # SQLite 数据库版
@@ -192,14 +192,31 @@ def GetNotes(): # 返回全部笔记的列表
         return ['No data on server']
 ```
 
-输入英文ok，但输入中文时服务器端报错
+输入英文ok，但输入中文时服务器端报错。
 ```
  cur.execute("INSERT INTO Notes(Time, Content) VALUES(?,?)", (time, note))
 ProgrammingError: You must not use 8-bit bytestrings unless you use a text_factory that can interpret 8-bit bytestrings (like text_factory = str). It is highly recommended that you instead just switch your application to Unicode strings.
 ```
 
-中文编码问题到现在一直搞不清楚。明天来研究解决吧。
+尝试解决：
+将 `note = request.forms.get('newnote')` 改为`note = unicode(request.forms.get('newnote'), 'utf-8')`后，网页端输入中文ok，但命令行下输入中文会报错：
+```
+note = unicode(request.forms.get('newnote'), 'utf-8')
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 0: invalid continuation byte
+```
+
+中文编码问题还没有很好地理解，明天读些文章再补补课。
+
+#### 改用 jinja2 模版
+jinja2 官方文档对初学而言嫌繁杂了。[这篇文章](http://reliablybroken.com/b)提供了一些基本的概念和例子。
+
+从原先采用的 simpleTemplate 改为 jinja2 模版，只需：
+* 在服务端py代码中改用 jinja2_view() decorator
+* 修改模版中类python的语句格式
+    - `% for note in notes:` 改为 `{% for note in notes %}`
+    - `% end` 改为 `{% endfor %}`
 
 ### 进展
 * 151108 创建
-* 151110 改用SQLite
+* 151110 改用 SQLite 数据库
+* 151111 改用 jinja2 模版

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Easynote-web</title>
+</head>
+<body>
+	<h3>Easynote-Web版 v0</h3>
+	<h4>添加笔记</h4>
+	
+	<form action="/note" method="post">
+	> <input name="newnote" type="text" />
+	<input value="Add" type="submit" />
+	</form>
+	<br />
+	
+	<h4>历史笔记</h4>
+	<ul>
+	{% for note in notes %}
+		<li>{{note}}</li>
+	{% endfor %}
+	</ul>
+</body>
+</html>
