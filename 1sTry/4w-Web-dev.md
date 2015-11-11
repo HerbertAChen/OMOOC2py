@@ -214,7 +214,7 @@ jinja2 官方文档对初学而言嫌繁杂了。[这篇文章](http://reliablyb
 * 在服务端py代码中改用 jinja2_view() decorator
 * 修改模版中类python的语句格式
     - `% for note in notes:` 改为 `{% for note in notes %}`
-    - `% end` 改为 `{% endfor %}`
+    - `% end` 改为 `{% endfor %} `
 
 ### 进展
 * 151108 创建
