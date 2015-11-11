@@ -208,11 +208,9 @@ UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 0: invalid c
 中文编码问题还没有很好地理解，明天读些文章再补补课。
 
 #### 改用 jinja2 模版
-jinja2 官方文档对初学而言嫌繁杂了。[这篇文章](http://reliablybroken.com/b)提供了一些基本的概念和例子。
-
-从原先采用的 simpleTemplate 改为 jinja2 模版，只需：
+jinja2 官方文档对初学而言嫌繁杂了。本周任务不需要复杂的模版功能。从 bottle 内置的 simpleTemplate 改为 jinja2 模版，只需：
 * 在服务端py代码中改用 jinja2_view() decorator
-* 修改模版中类python的语句格式
+* 修改模版中类python的语句格式，例如
     - `% for note in notes:` 改为 `{% for note in notes %}`
     - `% end` 改为 `{% endfor %} `
 
