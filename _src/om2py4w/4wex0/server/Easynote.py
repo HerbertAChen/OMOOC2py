@@ -4,7 +4,7 @@ from os.path import exists
 import sqlite3
 from datetime import datetime
 
-dbfilename = "mynotes.db"
+dbfilename = "webnotes.db"
 		
 def NewNote(note):
 	con = sqlite3.connect(dbfilename)

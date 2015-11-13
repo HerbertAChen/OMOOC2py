@@ -211,10 +211,17 @@ UnicodeDecodeError: 'utf8' codec can't decode byte 0xd6 in position 0: invalid c
 jinja2 官方文档对初学而言嫌繁杂了。本周任务不需要复杂的模版功能。从 bottle 内置的 simpleTemplate 改为 jinja2 模版，只需：
 * 在服务端py代码中改用 jinja2_view() decorator
 * 修改模版中类python的语句格式，例如
-    - `% for note in notes:` 改为 `{% for note in notes %}`
-    - `% end` 改为 `{% endfor %} `
+    - `% for note in notes:` 改为 `{% for note in notes %}` 
+    - `% end` 改为 `{% endfor %} ` 
+
+#### 使用 bootstarp
+浏览了官网上的简介和 getting started，尝试了最简单的 [starter-template 示例](http://getbootstrap.com/examples/starter-template/)
+
+把原来 html 的内容添加到这个 starter-template 里，算是完成了页面的初次美化。其实还是蛮丑的，有时间再慢慢美化吧。
 
 ### 进展
-* 151108 创建
-* 151110 改用 SQLite 数据库
+* 151113 使用 bootstrap
 * 151111 改用 jinja2 模版
+* 151110 改用 SQLite 数据库
+* 151108 创建
+* 附：[Github 代码目录](https://github.com/sunoonlee/OMOOC2py/tree/master/_src/om2py4w/4wex0)

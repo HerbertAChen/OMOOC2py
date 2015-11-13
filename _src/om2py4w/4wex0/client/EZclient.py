@@ -20,11 +20,12 @@ def main():
 
 def addnote(note):
 	requests.post('http://localhost:8080/note', data = {'newnote':note})
+	print 'note added!'
 
 def listnotes():
 	r = requests.get('http://localhost:8080/note')
 	soup = BeautifulSoup(r.text,'html.parser')
-	lis = soup.find_all('li')
+	lis = soup.find_all('p')
 	notes = ''
 	for i in lis:
 		notes += i.get_text()+'\n'
