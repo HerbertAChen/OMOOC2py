@@ -15,8 +15,12 @@
 
     <style>
     body {
-      padding-top: 100px;
+      padding-top: 50px;
       background-color: #eee;
+    }
+    .new-note {
+      padding: 40px 50px;
+      margin-top: 60px;
     }
     .note-form {
       max-width: 600px;
@@ -67,7 +71,7 @@
 
     <div class="container">
 
-      <div>
+      <div class="new-note">
         <form action="/note" method="post" class="note-form">
         <input type="text" name="newnote" class="form-control" placeholder="add new note" autofocus/>
         </form>
@@ -80,6 +84,14 @@
       </div>
 
     </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
   </body>
 </html>

@@ -1,7 +1,10 @@
 #/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bottle import get, post, request, run, jinja2_view
+import sae.kvdb
+from datetime import datetime
 import Easynote
+
 
 @get('/note')
 @jinja2_view('easynote.html')
