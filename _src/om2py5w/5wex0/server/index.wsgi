@@ -66,11 +66,11 @@ def Admin():
 	kv.disconnect_all()
 	return {'info': ['%s notes in total.' % notes_num]}
 
-@app.route('/delete_all') # 供管理员用：清空笔记！
-def delete_all():
-	kv = sae.kvdb.Client()
-	kv.delete('notes')
-	kv.disconnect_all()
-	return "All notes deleted!"
+#@app.route('/delete_all') # 供管理员用：清空笔记！
+#def delete_all():
+#	kv = sae.kvdb.Client()
+#	kv.delete('notes')
+#	kv.disconnect_all()
+#	return "All notes deleted!"
 
 application = sae.create_wsgi_app(app)
