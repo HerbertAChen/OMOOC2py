@@ -1,6 +1,6 @@
 #/usr/bin/env python
 # -*- coding: utf-8 -*-
-from bottle import Bottle, route, request, jinja2_view
+from bottle import Bottle, route, request, jinja2_view, redirect
 import sae, sae.kvdb
 from datetime import datetime
 
@@ -40,9 +40,7 @@ def ShowPage():
 def CreateNote():
 	text = unicode(request.forms.get('newnote'), 'utf-8') 
 	if text: NewNote(text)
-	notes = GetNotes()
-	notes_reverse = list(reversed(notes))
-	return {'notes':notes_reverse}
+	redirect('/')
 
 @app.route('/tags') # 待完善：标签浏览和管理
 @jinja2_view('info.html')
@@ -57,7 +55,7 @@ def ShowAbout():
 			'Contact:','- Github/weibo: sunoonlee','- Email: helloliming@gmail.com']
 	return {'info': about}
 
-@app.route('/admin') # 供管理员用：统计笔记数量等
+@app.route('/admin') # 统计笔记数量
 @jinja2_view('info.html')
 def Admin():
 	kv = sae.kvdb.Client()
@@ -66,7 +64,7 @@ def Admin():
 	kv.disconnect_all()
 	return {'info': ['%s notes in total.' % notes_num]}
 
-#@app.route('/delete_all') # 供管理员用：清空笔记！
+#@app.route('/delete_all') #清空笔记 有待寻找更好的方式
 #def delete_all():
 #	kv = sae.kvdb.Client()
 #	kv.delete('notes')
