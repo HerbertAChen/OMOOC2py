@@ -1,15 +1,9 @@
 {% extends "__base__.html" %}
 {% block body %}
 
-<div class="new-note">
-  <form action="/" method="post" class="note-form">
-  <input type="text" name="newnote" class="form-control" placeholder="add new note" autofocus/>
-  </form>
-</div>
-
 <div class="note-history">
   {% for note in notes %}
-  <p class='note-content'>{{note.get('content','')|e}}</p>
+  <p class='note-text'>{{note.get('text','')|e}}</p>
   <p class='note-time'>{{note.get('time','')[:16]}}</p>
   {% endfor %}
 </div>

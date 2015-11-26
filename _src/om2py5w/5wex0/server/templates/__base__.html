@@ -8,17 +8,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Easynote-WEB</title>
+    <title>SUNOTE</title>
 
-    <link rel="stylesheet" href="/static/css/sunote.css" />
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="/static/css/sunote.css" />
   </head>
 
   <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -27,7 +27,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">EASYNOTE</a>
+          <a class="navbar-brand" href="/">SUNOTE</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -39,16 +39,25 @@
       </div>
     </nav>
 
+    <!-- Begin page content -->
     <div class="container">
-
     {% block body %}{% endblock %}
-
     </div><!-- /.container -->
     
+    <footer class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+      <div>
+        <form action="/" method="post" class="note-form">
+        <input type="text" name="newnote" class="form-control" placeholder="add new note" autofocus/>
+        </form>
+      </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/assets/js/ie10-viewport-bug-workaround.js"></script>
-
   </body>
 </html>
