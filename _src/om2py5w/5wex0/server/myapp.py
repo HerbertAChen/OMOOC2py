@@ -5,7 +5,7 @@ from flask import Flask, request, redirect, render_template
 import db
 
 app = Flask(__name__)
-app.debug = True
+app.debug = True 
 
 @app.route('/', methods=['GET', 'POST'])
 def Note():
@@ -22,7 +22,6 @@ def Note():
 				db.Delete(-j)
 			else:
 				db.AddNote(text)
-
 		return redirect('/')
 	notes = db.GetNotes()
 	notes_reverse = list(reversed(notes))
@@ -30,13 +29,13 @@ def Note():
 
 @app.route('/tags') # 待完善：标签浏览和管理
 def Export():
-	info = u' \n功能开发中...'
+	info = u' \n 功能开发中...'
 	return render_template('info.html', info=info)
 
 @app.route('/about')
 def ShowAbout():
 	info = u' \n极简笔记本应用 by sunoonlee\n\
-		- for omooc2py 5wex0 \nContact:\n- Github/weibo: sunoonlee\n\
+		- for omooc2py 5wex0  \nContact:\n- Github/weibo: sunoonlee\n\
 		- Email: helloliming@gmail.com'
 	return render_template('info.html', info=info)
 
