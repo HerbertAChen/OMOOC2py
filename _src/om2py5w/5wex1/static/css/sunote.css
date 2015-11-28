@@ -1,0 +1,56 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  padding-top: 50px; /* 需要留出 navbar 的高度 */
+  background-color: #fff;
+  margin-bottom: 100px;
+}
+h3 {
+  color: grey;
+  text-align: left;
+  margin: 20px auto;
+  font-size: 18px;
+}
+.container {
+  max-width: 800px;
+}
+.navbar {
+  background-color: #E0E0E0;
+}
+.new-note {
+  padding: 40px 50px;
+  margin-top: 60px;
+}
+.note-form {
+  max-width: 600px;
+  padding: 1px;
+  margin: 20px auto;
+}
+.form-control {
+  font-size: 16px;
+  size:40;
+}
+.note-history {
+  padding: 10px 10px;
+  text-align: left;
+  margin: 0px auto;
+}
+.note-text {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.note-time {
+  font-size: 12px;
+  color: Grey;
+}
+.footer {
+  text-align: center;
+  margin-top: 10px;
+  color: grey;
+}
+.form {
+  margin: 20px auto;
+}

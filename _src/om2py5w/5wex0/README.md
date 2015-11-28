@@ -2,7 +2,7 @@
 
 极简交互式笔记的公网版本, 兼容命令行交互方式，并提供本地命令行管理工具
 * 浏览器交互
-    - 访问 http://sunote.sinaapp.com/
+    - 访问 http://1.sunote.sinaapp.com/
 * 客户端命令行交互
     - 运行 [client_cli.py](client_cli.py)
         - 需安装模块：[requests](http://docs.python-requests.org/en/latest/), [bs4](http://www.crummy.com/software/BeautifulSoup/bs4/doc/)
