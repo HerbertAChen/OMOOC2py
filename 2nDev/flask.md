@@ -18,19 +18,7 @@ IPE 项目的 web 交互部分采用了 flask 框架，部署到阿里云上。�
 
 用 flash() 可以方便地在页面上提供反馈。为此需要：
 
-* 在模版里留下存储 flash 信息的位置，典型的用法如：
-```
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <span class=flashes>
-    {% for message in messages %}
-      {{ message }}
-    {% endfor %}
-    </span>
-  {% endif %}
-{% endwith %}
-```
-
+* 在模版里留下存储 flash 信息的位置，可以用 with 语句：`{% with messages = get_flashed_messages() %}`
 * 在 flask app 的路由函数里，加入一句 `flash('你想要的文字')`
 
 #### 在阿里云上部署 flask app
