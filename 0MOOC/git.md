@@ -1,7 +1,7 @@
 # GIT 个人笔记
 
 ## 前言
-（走了一些弯路才发觉）官方的 [Pro Git book][ProGit] 写得清楚明白。Git 大概也是那种用 20% 的功能可以应付 80% 场景的工具。非重度的日常使用，只读第一章与第二章前两节应该基本足够；有其他问题可再去查其他章节，或者 Reference Manual。
+走了一些弯路才发觉，官方的 [Pro Git book][ProGit] 写得清楚明白。Git 大概也是那种用 20% 的功能可以应付 80% 场景的工具。对简单的日常使用（不涉及团队协作），只读第一章与第二章前两节大概也足够；有其他问题可再去查其他章节，或者 Reference Manual。
 
 [Pro Git book][ProGit] 的第一章介绍什么是 Git，以及如何安装和配置 Git；第二章前两节基本包含了 Git 最基本的一些使用流程；第三章专门讲 Branching。
 
@@ -9,7 +9,7 @@
 
 ## What is Git
 Git is a distributed Version Control System.
-* VCS 的发展：local -> centralized -> distributed
+* 版本管理系统的不同类型：local -> centralized -> distributed
 * 大项目、多人协作场景下，版本管理并不简单
 
 Git 的特点：
@@ -32,18 +32,18 @@ Git 的特点：
 * `~/.gitconfig` or `~/.config/git/config`：与 `--global` 关联
 * `.git/config` for a single repository
 
-### 首次使用可配置项
+### 一些可配置项
 
 * `user.name`
 * `user.email`
 * `core.editor`
+* 另外，想让 git 记住输入过的账户信息，可以用 `git config --global credential.helper wincred`
 * 具体命令见 [Pro Git book][ProGit] Chapter1.6
 
 ## Git 部分基本概念
 
 * repository: a project's folder. 
-* commit: 好比 "a snapshot of all the files in your project at a particular point in time".
-  * 大致就是有改动后提交 project 的一个新版本
+* commit: "a snapshot of all the files in your project at a particular point in time".
   * 在 Github 上 commit 时有选项：add the commit to the current or a new branch
 * staging area: 
   * 提供一个中间环节，缓冲区，避免同时 commit 两个不相关的修改
@@ -79,8 +79,10 @@ Git 的特点：
   * `-p`: shows the difference
   * `-(n)`: last n commits
   * `--stat`: 查看commit的缩略信息
-  * format options, limiting options
-* Git 命令批量操作可用：**file-glob patterns**，类似正则表达式
+  * 可以指定：format options, limiting options
+* 文件批量操作可用：**file-glob patterns**，类似正则表达式
+
+## Git 协同工作方法入门
 
 ## Someday/Maybe
 
