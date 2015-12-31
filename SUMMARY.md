@@ -6,7 +6,7 @@
     + [issue, wiki 及 Gitbook](0MOOC/issue-wiki-gitbook.md)
 - [PY 技能](python/README.md)
     + [datetime 模块学习](python/datetime.md)
-- [主线任务：Easynote 系列](_src/README.md)
+- [主线任务：极简记事本](_src/README.md)
 	+ [1w - CLI 版](_src/om2py0w/0wex1/README.md)
     + [2w - GUI 版](_src/om2py2w/2wex0/README.md)
     + [3w - UDP 版](_src/om2py3w/3wex0/README.md)
@@ -16,9 +16,8 @@
         * [Web 开发基本知识](1sTry/4w-Web-basics.md)
         * [Web 版开发记录](1sTry/4w-Web-dev.md)
     + [5w - 公网版](1sTry/5w-Sae-dev.md)
-    + 6w - 公众号版
-    + 7w - Android 版
-- [迭代作品](2nDev/README.md)
+- [团队项目](2nDev/README.md)
+    + [Flask 使用小结](2nDev/flask.md)
 - [方法和感悟](thinking/README.md)
     + [0w - 慎独/不盲从/适度困难](thinking/0w-lecture-notes.md)
     + [1w - CLI/高桥流](thinking/1w-lecture-notes.md)
