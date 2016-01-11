@@ -2,6 +2,7 @@
 
 - [基础工具](0MOOC/README.md)
 	+ [Git](0MOOC/git.md)
+    + [linux](0MOOC/linux.md)
     + [SublimeText](0MOOC/SublimeText.md)
     + [issue, wiki 及 Gitbook](0MOOC/issue-wiki-gitbook.md)
 - [PY 技能](python/README.md)

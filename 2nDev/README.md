@@ -2,7 +2,7 @@
 
 一项gitbook图书的更新提醒服务
 
-链接： [仓库](https://github.com/wp-lai/mipe) || [演示](http://114.215.152.39:5000/login)
+链接： [仓库](https://github.com/wp-lai/mipe) || [演示](http://wp-lai.github.io/mipe/)
 
 开发成员：
 
