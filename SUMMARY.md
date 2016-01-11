@@ -2,8 +2,9 @@
 
 - [基础工具](0MOOC/README.md)
 	+ [Git](0MOOC/git.md)
-    + [linux](0MOOC/linux.md)
+    + [Linux](0MOOC/linux.md)
     + [SublimeText](0MOOC/SublimeText.md)
+    + [google](0MOOC/google.md)
     + [issue, wiki 及 Gitbook](0MOOC/issue-wiki-gitbook.md)
 - [PY 技能](python/README.md)
     + [datetime 模块学习](python/datetime.md)
