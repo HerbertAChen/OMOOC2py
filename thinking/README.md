@@ -1,9 +1,9 @@
-lecture_notes
+notes
 
 * [0w-慎独/不盲从/适度困难](0w-lecture-notes.md)
 * [1w-CLI/高桥流](1w-lecture-notes.md)
 * [2w-最小代价/详细记录/提问](2w-lecture-notes.md)
-* to be continued
+* [一年之后的回忆](omooc2py-memory.md)
 
 HOWTO
 
