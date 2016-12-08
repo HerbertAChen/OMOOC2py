@@ -4,9 +4,9 @@
 from flask import Flask, request, redirect, render_template,\
 	session, url_for, g, flash, abort
 from werkzeug import check_password_hash, generate_password_hash
-import db
 
-SECRET_KEY = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+import db
+from settings import SECRET_KEY
 
 app = Flask(__name__)
 app.debug = True 

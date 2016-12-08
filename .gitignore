@@ -2,6 +2,7 @@
 *.txt
 *.db
 .DS_Store
+settings.py
 
 _book/*
 node_modules/*
