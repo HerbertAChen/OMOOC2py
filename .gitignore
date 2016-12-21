@@ -3,6 +3,10 @@
 *.db
 .DS_Store
 settings.py
+*.plist
+_*.md
+*/_*.md
+
 
 _book/*
 node_modules/*
