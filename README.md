@@ -29,4 +29,5 @@
     + [0w - 慎独/不盲从/适度困难](reflections/0w-lecture-notes.md)
     + [1w - CLI/高桥流](reflections/1w-lecture-notes.md)
     + [2w - 最小代价/详细记录/提问](reflections/2w-lecture-notes.md)
+    + [如何学习编程](reflections/howto-learn-programming.md)
 - [回忆](reflections/omooc2py-memory.md)
