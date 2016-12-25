@@ -40,7 +40,7 @@ C/S如何传输信息，什么是UDP、socket，如何用python实现？
 * 应用层
     - 规定应用程序的数据格式
  
-![data](internet-data.png)
+![data](img/internet-data.png)
 
 更多资料：
 * [Introduction to the Internet Protocols](http://www.uic.edu/depts/accc/network/ftp/v452.html)

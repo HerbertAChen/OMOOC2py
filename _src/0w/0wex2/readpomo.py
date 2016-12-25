@@ -4,7 +4,7 @@
 
 import unicodecsv as csv
 
-filename = 'Pomotodo_History_test.csv'
+filename = 'Pomotodo_History.csv'
 # 待改进：文件名的指定
 
 with open(filename,'rb') as pomocsv:
@@ -20,9 +20,12 @@ with open(filename,'rb') as pomocsv:
 	del pomodes[0] # 删去表头行
 
 	for des in pomodes:
-		a = des.partition(u'：')
-		p = a[0] #提取冒号前的任务名
-		s = a[2] #提取冒号后的子任务名
+		if u'：' in des:
+			a = des.partition(u'：')
+		else:
+			a = des.partition(':')
+		p = a[0].strip() #提取冒号前的任务名
+		s = a[2].strip() #提取冒号后的子任务名
 		if (p in tasklist) == 0:
 			tasklist.append(p)
 			data.append([p, [s,],[1,]])
